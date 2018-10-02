@@ -6,8 +6,11 @@
 package lendle.courses.wp.buttonsamples;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
 /**
@@ -25,11 +28,16 @@ public class ActionListenerSample2 {
         frame.setSize(800, 600);
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setLayout(new FlowLayout());
-        
+        frame.setLocationRelativeTo(null);
         JButton button=new JButton("click");
         //將 sample1 改成用 anonymous class
         //加入 JOptionPane.showMessageDialog(null, "HelloWorld");
-        
+       button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "HelloWorld");
+            }
+        });
         //////////////////////////////////////////////////////
         frame.add(button);
         
